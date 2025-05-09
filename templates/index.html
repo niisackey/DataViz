@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Visualization Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='illustrations/logo.png') }}" type="image/x-icon">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+    }
+
+    body {
+      background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #333;
+    }
+
+    header .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    header nav a {
+      margin-left: 24px;
+      color: #ccc;
+      font-weight: 500;
+    }
+
+    header nav a:hover {
+      color: #fff;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 40px;
+      gap: 40px;
+    }
+
+    .text-section {
+      max-width: 500px;
+    }
+
+    .text-section h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .text-section p {
+      font-size: 1.1rem;
+      color: #bbb;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .login-btn {
+      background-color: #fff;
+      color: #333;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .login-btn:hover {
+      background-color: #eee;
+    }
+
+    .login-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .illustration {
+      max-width: 500px;
+    }
+
+    .illustration img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .main-content {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header data-aos="fade-down">
+    <div class="logo">📊 DataViz</div>
+    
+  </header>
+
+  <main class="main-content">
+    <div class="text-section" data-aos="fade-right">
+      <h1>Big Data Visualization</h1>
+      <p>
+        DataViz is a modern desktop, web-based data visualization tool that allows users to securely log in with Google, upload CSV or Excel files, and instantly generate interactive dashboards using Pygwalker. Designed for usability and speed, it supports multiple concurrent dashboards per session, stores data temporarily without a database, and delivers a stunning user experience with responsive design, scroll-triggered animations, and rich visual illustrations. Whether you're exploring trends, analyzing spreadsheets, or sharing insights, DataViz makes data interaction intuitive, beautiful, and private..
+      </p>
+      <a href="{{ url_for('google.login') }}">
+        <button class="login-btn">
+          <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo">
+          Login with Google
+        </button>
+      </a>
+    </div>
+    <div class="illustration" data-aos="fade-left">
+        <img src="{{ url_for('static', filename='illustrations/undraw.svg') }}" alt="Big Data Visualization Illustration">
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
